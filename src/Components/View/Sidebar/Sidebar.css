@@ -1,0 +1,11 @@
+.sidebar {
+    position: absolute;
+    width: 270px;
+    height: 70%;
+    overflow-y: auto;
+}
+
+.picThumb, .videoThumb {
+    width: 40px;
+    height: 40px;
+}

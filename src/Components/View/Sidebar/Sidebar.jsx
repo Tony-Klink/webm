@@ -1,10 +1,10 @@
 import React from 'react';
-import { ListElement } from './ListElement';
+import './Sidebar.css';
+import { ListElement } from '../List/ListElement';
 
-export const List = (props) => {
-    console.log(props);
+export const Sidebar = (props) => {
     return (
-        <div className="tempList">
+        <div className="sidebar threadsList">
         {props.threadData.threads.map((post) => (
             <ListElement key={post.num} data={post}/>
         ))}

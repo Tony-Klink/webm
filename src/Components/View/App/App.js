@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { List } from '../List/List';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { GalleryFooter } from '../Gallery/GalleryFooter/GalleryFooter';
+import { Player } from '../Player/Player';
+//import { List } from '../List/List';
 
 import { data } from '../../../MockupData/data';
+import { threadDetails } from '../../../MockupData/threadDetails';
 
 class App extends Component {
   render() {
@@ -17,10 +21,13 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <List className="threadsList" threadData={data}/>
+        <Sidebar threadData={data} />
+        <Player />
+        <GalleryFooter threadData={threadDetails} />
       </div>
     );
   }
 }
 
 export default App;
+//<List threadData={data} />

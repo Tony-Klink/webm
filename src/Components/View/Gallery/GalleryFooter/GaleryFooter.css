@@ -1,0 +1,13 @@
+.galleryFooter {
+    position: absolute;
+    display: inline-flex;
+    overflow-x: auto;
+    margin-left: 270px;
+    bottom: 0px;
+}
+
+.videoThumbGallery {
+    padding-right: 4px;
+    width: 128px;
+    height: 128px;
+}

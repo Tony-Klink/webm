@@ -1,6 +1,12 @@
 import React from 'react';
 import { AttachmentView } from './AttachmentView';
 
+const htmlDecode = (input) => {
+    let doc = new DOMParser().parseFromString(input, "text/html");
+    return doc.documentElement.textContent;
+}
+
+
 export const ListElement = (props) => {
     if (!props.data) {
         return (
@@ -8,8 +14,9 @@ export const ListElement = (props) => {
         );
     } else {
         return (
-            <div>
-                <div>{props.data.subject}</div>
+            <div className="listElement">
+                <div>{props.data.date}</div>
+                <div>{htmlDecode(props.data.subject)}</div>
                 <AttachmentView data={props.data.files} />
             </div>
         );
