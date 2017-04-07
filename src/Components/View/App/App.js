@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { Sidebar } from '../Sidebar/Sidebar';
+import SidebarContainer from '../../Container/SidebarContainer';
 import { GalleryFooter } from '../Gallery/GalleryFooter/GalleryFooter';
-import { Player } from '../Player/Player';
+//import { Player } from '../Player/Player';
 //import { List } from '../List/List';
 
-import { data } from '../../../MockupData/data';
+//import { data } from '../../../MockupData/data';
 import { threadDetails } from '../../../MockupData/threadDetails';
 
 class App extends Component {
@@ -21,8 +21,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Sidebar threadData={data} />
-        <Player />
+        <SidebarContainer />
         <GalleryFooter threadData={threadDetails} />
       </div>
     );
@@ -31,3 +30,4 @@ class App extends Component {
 
 export default App;
 //<List threadData={data} />
+//<Player />

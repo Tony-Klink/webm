@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './GaleryFooter.css';
 
 import { GaleryItem } from './GaleryItem';
@@ -17,7 +18,7 @@ const getAttachmentList = (data) => {
             }
         }
     }
-    console.log(files);
+    //console.log(files);
     return files;
 }
 

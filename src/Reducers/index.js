@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux';
-import { threads, board, itemsHasErrored, itemsIsLoading } from './items';
+import { threadsList, threadsListHasErrored, threadsListIsLoading, selectedId } from './threadsList';
+import { threadGalleryHasErrored, threadGalleryIsLoading, filesList} from './threadGallery';
 
 export default combineReducers({
-    board,
-    threads,
-    itemsHasErrored,
-    itemsIsLoading
+    threadsList,
+    threadsListHasErrored,
+    threadsListIsLoading,
+    selectedId,
+    threadGalleryHasErrored,
+    threadGalleryIsLoading,
+    filesList
 });
