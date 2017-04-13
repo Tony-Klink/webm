@@ -19,23 +19,47 @@ export const threadGalleryFetchDataSuccess = (thumbs) => {
     };
 }
 
+export const selectedThreadContentId = (threadId) => {
+    return {
+        type: 'SELECTED_THREAD_CONTENT_ID',
+        threadId
+    }
+}
+
+const getAttachmentList = (data) => {
+    let files = [];
+    for(let elem of data[0].posts) {
+        for(let file of elem.files) {
+            switch (file.type) {
+                case 6:
+                    files.push(file);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    return files;
+}
+
 export const threadGalleryFetchData = (url) => {
     return (dispatch) => {
-        dispatch(threadsListIsLoading(true));
-        let files = [];
+        dispatch(threadGalleryIsLoading(true));
+        
         fetch(url)
+        //fetch(url, {mode: 'no-cors'})
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
-                dispatch(threadsListIsLoading(false));
+                dispatch(threadGalleryIsLoading(false));
                 console.log('Hooray2!');
                 return response;
             })
             .then((response) => response.json())
             .then((items) => {
-                dispatch(threadsListFetchDataSuccess(items.threads))
+                dispatch(threadGalleryFetchDataSuccess(getAttachmentList(items.threads)))
                 })
-            .catch(() => dispatch(threadsListHasErrored(true)));
+            .catch(() => dispatch(threadGalleryHasErrored(true)));
     };
 }

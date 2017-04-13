@@ -1,4 +1,7 @@
 import React from 'react';
+import { Image } from 'semantic-ui-react';
+
+import './AttachmentView.css';
 
 export const AttachmentView = (props) => {
     return (
@@ -12,13 +15,13 @@ export const AttachmentView = (props) => {
 
 const ThumbImage = (props) => {
     return (
-        <img className="picThumb" src={'https://2ch.hk' + props.data.thumbnail} alt=""/>
+        <Image width="48" height="48" shape="rounded" className="picThumb" src={'https://2ch.hk' + props.data.thumbnail} alt=""/>
     );
 }
 
 const Vid = (props) => {
     return (
-        <img className="videoThumb" src={'https://2ch.hk' + props.data.thumbnail} alt=""/>
+        <Image width="48" height="48" shape="rounded" className="videoThumb" src={'https://2ch.hk' + props.data.thumbnail} alt=""/>
     );
 }
 

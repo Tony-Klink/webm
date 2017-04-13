@@ -27,3 +27,12 @@ export const filesList = (state = [], action) => {
       return state;
   }
 }
+
+export const selectedId = (state = "", action) => {
+  switch (action.type) {
+    case 'SELECTED_THREAD_CONTENT_ID':
+      return action.threadId;
+    default:
+      return state;
+  }
+}

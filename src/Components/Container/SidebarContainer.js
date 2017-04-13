@@ -6,12 +6,6 @@ import { Sidebar } from '../View/Sidebar/Sidebar';
 
 
 class SidebarContainer extends Component {
-    componentDidMount() {
-        this.props.fetchData('https://2ch.hk/' + 'td' + '/catalog.json');
-    }
-
-
-
     htmlDecode(input) {
         let doc = new DOMParser().parseFromString(input, "text/html");
         return doc.documentElement.textContent;
@@ -47,6 +41,7 @@ SidebarContainer.PropTypes = {
 const mapStateToProps = (state) => {
     return {
         items: state.threadsList,
+        currentBoard: state.selectedBoardId,
         hasErrored: state.itemsHasErrored,
         isLoading: state.itemsIsLoading
     };

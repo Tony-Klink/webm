@@ -4,7 +4,7 @@ import ListElement from '../List/ListElement';
 
 export const Sidebar = (props) => {
     return (
-        <div className="sidebar threadsList">
+        <div>
             {props.data.items.map((post) => (
                 <ListElement key={post.num} data={post} />
             ))}

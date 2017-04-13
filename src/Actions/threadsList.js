@@ -19,18 +19,12 @@ export const threadsListFetchDataSuccess = (threads) => {
     };
 }
 
-export const selectedThreadId = (threadId) => {
-    return {
-        type: 'SELECTED_THREAD_ID',
-        threadId
-    }
-}
-
 export const threadsListFetchData = (url) => {
     return (dispatch) => {
         dispatch(threadsListIsLoading(true));
 
         fetch(url)
+        //fetch(url, {mode: 'no-cors'})
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);

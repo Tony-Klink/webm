@@ -1,13 +1,20 @@
 import { combineReducers } from 'redux';
-import { threadsList, threadsListHasErrored, threadsListIsLoading, selectedId } from './threadsList';
-import { threadGalleryHasErrored, threadGalleryIsLoading, filesList} from './threadGallery';
+import { threadsList, threadsListHasErrored, threadsListIsLoading } from './threadsList';
+import { threadGalleryHasErrored, threadGalleryIsLoading, filesList, selectedId} from './threadGallery';
+import { boardOptionsHasErrored, boardOptionsIsLoading, boardOptions, selectedBoardId } from './boardOptions';
+import { currentVideo } from './selectVideo';
 
 export default combineReducers({
+    selectedBoardId,
+    boardOptions,
+    boardOptionsIsLoading,
+    boardOptionsHasErrored,
     threadsList,
-    threadsListHasErrored,
     threadsListIsLoading,
+    threadsListHasErrored,
     selectedId,
-    threadGalleryHasErrored,
+    filesList,
     threadGalleryIsLoading,
-    filesList
+    threadGalleryHasErrored,
+    currentVideo
 });

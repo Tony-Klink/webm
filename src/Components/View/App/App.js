@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Header, Grid, Advertisement, Segment, Rail } from 'semantic-ui-react';
 
 import SidebarContainer from '../../Container/SidebarContainer';
-import { GalleryFooter } from '../Gallery/GalleryFooter/GalleryFooter';
-//import { Player } from '../Player/Player';
-//import { List } from '../List/List';
-
-//import { data } from '../../../MockupData/data';
-import { threadDetails } from '../../../MockupData/threadDetails';
+import GalleryFooter from '../Gallery/GalleryFooter/GalleryFooter';
+import BoardsDropdown from '../BoardsDropdown/boardsDropdown';
+import Player from '../Player/Player';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <SidebarContainer />
-        <GalleryFooter threadData={threadDetails} />
+          <Header as="h2">Welcome to React<Advertisement unit='banner' test='Banner' /></Header>
+          
+          <Grid columns='equal' centered>
+            <Grid.Row verticalAlign="top">
+              <Grid.Column width={3} textAlign="left">
+                <BoardsDropdown />
+                <SidebarContainer />
+              </Grid.Column>
+              <Grid.Column width={13}>
+                <Grid.Row>
+                  <Player />
+                </Grid.Row>
+                <Grid.Row verticalAlign="bottom" textAlign="left">
+                  <GalleryFooter />
+                </Grid.Row>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
       </div>
     );
   }

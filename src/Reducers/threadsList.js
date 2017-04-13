@@ -27,12 +27,3 @@ export const threadsList = (state = [], action) => {
       return state;
   }
 }
-
-export const selectedId = (state = "", action) => {
-  switch (action.type) {
-    case 'SELECTED_THREAD_ID':
-      return action.threadId;
-    default:
-      return state;
-  }
-}
