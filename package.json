@@ -2,8 +2,9 @@
   "name": "webm",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tonyklink.github.io/webm",
+  "homepage": "https://tony-klink.github.io/webm/",
   "dependencies": {
+    "gh-pages": "^0.12.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -13,7 +14,8 @@
     "redux": "^3.6.0",
     "redux-actions": "^2.0.1",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.67.2"
+    "semantic-ui-react": "^0.67.2",
+    "serve": "^5.1.4"
   },
   "devDependencies": {
     "react-scripts": "0.9.5",
@@ -22,7 +24,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-start": "serve build/"
   }
 }
