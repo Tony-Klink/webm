@@ -45,15 +45,15 @@ const getAttachmentList = (data) => {
 export const threadGalleryFetchData = (url) => {
     return (dispatch) => {
         dispatch(threadGalleryIsLoading(true));
-        
-        fetch(url)
+        threadGalleryHasErrored(false);
+        fetch('https://crossorigin.me/' + url, {mode: 'cors'})
         //fetch(url, {mode: 'no-cors'})
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
                 dispatch(threadGalleryIsLoading(false));
-                console.log('Hooray2!');
+                console.log('Gallery items has been fetched: ', response.body);
                 return response;
             })
             .then((response) => response.json())

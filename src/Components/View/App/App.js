@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Grid, Advertisement, Segment, Rail } from 'semantic-ui-react';
+import { Header, Grid, Advertisement } from 'semantic-ui-react';
 
 import SidebarContainer from '../../Container/SidebarContainer';
 import GalleryFooter from '../Gallery/GalleryFooter/GalleryFooter';

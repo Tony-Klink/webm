@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { AttachmentView } from './AttachmentView';
 import { Item } from 'semantic-ui-react';
 
-import { selectedThreadContentId, threadGalleryFetchData } from '../../../Actions/threadGallery';
+import { selectedThreadContentId, threadGalleryFetchData, threadGalleryHasErrored } from '../../../Actions/threadGallery';
 
 const htmlDecode = (input) => {
     let doc = new DOMParser().parseFromString(input, "text/html");
@@ -13,6 +13,7 @@ const htmlDecode = (input) => {
 class ListElement extends Component {
     handleSelection = (id) => {
         console.log(`thread @${id} is selected`);
+        this.props.resetError();
         this.props.fetchThreadDataById(id);
         this.props.fetchVideos('https://2ch.hk/' + this.props.selectedBoard + '/res/' + id + '.json');
     }
@@ -44,7 +45,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchThreadDataById: (id) => dispatch(selectedThreadContentId(id)),
-        fetchVideos: (url) => dispatch(threadGalleryFetchData(url))
+        fetchVideos: (url) => dispatch(threadGalleryFetchData(url)),
+        resetError: () => dispatch(threadGalleryHasErrored(false))
     }
 }
 

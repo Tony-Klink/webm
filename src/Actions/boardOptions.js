@@ -29,15 +29,15 @@ export const selectedBoardId = (boardId) => {
 export const boardOptionsFetchData = (url) => {
     return (dispatch) => {
         dispatch(boardOptionsIsLoading(true));
-
-        fetch(url)
+        boardOptionsHasErrored(false);
+        fetch('https://crossorigin.me/' + url, {mode: 'cors'})
         //fetch(url, {mode: 'no-cors'})
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
                 dispatch(boardOptionsIsLoading(false));
-                console.log('Hooray3');
+                console.log('Board options fetched: ', response.body);
                 return response;
             })
             .then((response) => response.json())
