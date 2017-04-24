@@ -9,10 +9,10 @@ import GaleryItem from './GaleryItem';
 class GaleryFooter extends Component {
     render() {
         if (this.props.hasErrored) {
-            return <p>ERROR! HUI SOSI!</p>;
+            return <p>ERROR!</p>;
         }
         if (this.props.isLoading) {
-            return <p>Падажжи, ёбана...</p>;
+            return <p>Подожди, идет загрузка...</p>;
         }
         return (
             <Image.Group size="small" className="galleryFooter">

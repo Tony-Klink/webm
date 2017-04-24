@@ -7,8 +7,8 @@ class Player extends Component {
             return <video width="1280px" height="720px" controls autoPlay={false} loop={true} />
         } else
         return (
-            <video key={this.video} width="1280px" height="720px" controls autoPlay={false} loop={true} poster={'https:/2ch.hk' + this.props.thumbnail}
-            src={'https:/2ch.hk' + this.props.video} />
+            <video key={this.video} width="1280px" height="720px" controls autoPlay={false} loop={true} poster={'https://2ch.hk' + this.props.thumbnail}
+            src={'https://2ch.hk' + this.props.video} />
         );
     }
 }
