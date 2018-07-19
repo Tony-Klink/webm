@@ -15,7 +15,7 @@
     "redux-actions": "^2.0.1",
     "redux-thunk": "^2.2.0",
     "semantic-ui-react": "^0.67.2",
-    "serve": "^5.1.4"
+    "serve": "^7.0.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5",
